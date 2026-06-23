@@ -954,13 +954,11 @@
 </head>
 <body>
 
-<!-- Loading Overlay -->
 <div class="loading-overlay" id="loadingOverlay">
     <div class="spinner"></div>
     <div class="loading-text">Cargando Python en tu navegador...</div>
 </div>
 
-<!-- Animated Background -->
 <div class="bg-animation">
     <div class="particle"></div>
     <div class="particle"></div>
@@ -969,19 +967,16 @@
     <div class="particle"></div>
 </div>
 
-<!-- Progress Bar -->
 <div class="progress-container">
     <div class="progress-bar" id="progressBar"></div>
 </div>
 
-<!-- Header -->
 <header>
     <div class="python-icon">🐍</div>
     <h1>Guia Interactiva de Python</h1>
     <p>Estructuras de datos, manejo de errores, librerias externas y auditoria de codigo. Aprende practicando con codigo real que ejecutas en tu navegador.</p>
 </header>
 
-<!-- Navigation -->
 <nav>
     <button class="active" onclick="showSection('inicio', this)">🏠 Inicio</button>
     <button onclick="showSection('estructuras', this)">📦 Estructuras de Datos</button>
@@ -989,10 +984,10 @@
     <button onclick="showSection('librerias', this)">📚 Librerias</button>
     <button onclick="showSection('sonarqube', this)">🔍 SonarQube</button>
     <button onclick="showSection('ejercicios', this)">💪 Ejercicios</button>
+    <button onclick="showSection('segura', this)">🔐 Programación Segura</button>
     <button onclick="showSection('playground', this)">🎮 Playground</button>
 </nav>
 
-<!-- ==================== INICIO ==================== -->
 <div class="section active" id="inicio">
     <h2 class="section-title"><span class="section-number">00</span>Bienvenido</h2>
     <p class="section-subtitle">Esta guia interactiva te permite aprender Python practicando directamente en tu navegador. Cada seccion incluye explicaciones, ejemplos ejecutables, quizzes y desafios.</p>
@@ -1017,6 +1012,7 @@
                 <li><strong>Seccion 3:</strong> Librerias externas y entornos virtuales</li>
                 <li><strong>Seccion 4:</strong> Auditoria de codigo con SonarQube</li>
                 <li><strong>Seccion 5:</strong> Ejercicios practicos propuestos</li>
+                <li><strong>Seccion 6:</strong> Programación Segura</li>
             </ul>
         </div>
         <div class="card">
@@ -1091,7 +1087,6 @@
         </div>
     </div>
 
-    <!-- Quiz de bienvenida -->
     <div class="quiz-container">
         <div class="quiz-question">1. Cual de estas NO es una estructura de datos basica en Python?</div>
         <div class="quiz-options">
@@ -1116,12 +1111,10 @@
     </div>
 </div>
 
-<!-- ==================== ESTRUCTURAS DE DATOS ==================== -->
 <div class="section" id="estructuras">
     <h2 class="section-title"><span class="section-number">01</span>Estructuras de Datos</h2>
     <p class="section-subtitle">Como organizar y guardar varios datos a la vez dentro de un programa. Listas, tuplas, diccionarios y conjuntos.</p>
 
-    <!-- LISTAS -->
     <h3 style="color: var(--accent); margin-top: 30px;">📋 Listas <span class="badge badge-lista">list</span></h3>
     <p style="color: var(--text-secondary); margin-bottom: 15px;">Coleccion ordenada y modificable. La estructura mas usada en Python. Se escribe entre corchetes <code>[ ]</code>.</p>
 
@@ -1175,7 +1168,6 @@ print("Promedio:", sum(notas) / len(notas))</textarea>
         <tr><td><code>clear()</code></td><td>Vacia la lista</td><td><code>l.clear()</code></td></tr>
     </table>
 
-    <!-- TUPLAS -->
     <h3 style="color: var(--accent); margin-top: 40px;">🔒 Tuplas <span class="badge badge-tupla">tuple</span></h3>
     <p style="color: var(--text-secondary); margin-bottom: 15px;">Coleccion ordenada que <strong>no se puede modificar</strong> (inmutable). Se escribe entre parentesis <code>( )</code>.</p>
 
@@ -1216,7 +1208,6 @@ print(f"a={a}, b={b}")</textarea>
         <strong>Regla practica:</strong> Usa una <strong>lista</strong> cuando los datos pueden cambiar (carrito de compras, notas). Usa una <strong>tupla</strong> cuando los datos no deberian cambiar (coordenadas, meses del anio, una fecha).
     </div>
 
-    <!-- DICCIONARIOS -->
     <h3 style="color: var(--accent); margin-top: 40px;">📖 Diccionarios <span class="badge badge-dict">dict</span></h3>
     <p style="color: var(--text-secondary); margin-bottom: 15px;">Guarda informacion en pares <strong>clave → valor</strong>. Accedes por nombre, no por posicion. Se escribe entre llaves <code>{ }</code>.</p>
 
@@ -1269,7 +1260,6 @@ print("Telefono:", estudiante.get("telefono", "sin dato"))</textarea>
         <tr><td><code>clear()</code></td><td>Vacia el diccionario</td><td><code>d.clear()</code></td></tr>
     </table>
 
-    <!-- CONJUNTOS -->
     <h3 style="color: var(--accent); margin-top: 40px;">🎯 Conjuntos <span class="badge badge-set">set</span></h3>
     <p style="color: var(--text-secondary); margin-bottom: 15px;">Coleccion de <strong>elementos unicos</strong>, sin orden. Los duplicados desaparecen automaticamente. Se escribe entre llaves <code>{ }</code> (sin pares clave:valor).</p>
 
@@ -1306,7 +1296,6 @@ print("3 esta en a?:", 3 in a)</textarea>
         </div>
     </div>
 
-    <!-- TABLA COMPARATIVA -->
     <h3 style="color: var(--accent); margin-top: 40px;">📊 Tabla Comparativa</h3>
     <table class="comparison-table">
         <tr>
@@ -1353,7 +1342,6 @@ print("3 esta en a?:", 3 in a)</textarea>
         </tr>
     </table>
 
-    <!-- Quiz estructuras -->
     <div class="quiz-container">
         <div class="quiz-question">2. Cual es la diferencia clave entre una lista y una tupla?</div>
         <div class="quiz-options">
@@ -1401,7 +1389,6 @@ print("3 esta en a?:", 3 in a)</textarea>
     </div>
 </div>
 
-<!-- ==================== MANEJO DE ERRORES ==================== -->
 <div class="section" id="errores">
     <h2 class="section-title"><span class="section-number">02</span>Manejo de Errores y Excepciones</h2>
     <p class="section-subtitle">Como lograr que tu programa no se caiga ante un dato incorrecto o una situacion inesperada.</p>
@@ -1561,7 +1548,6 @@ except ValueError as e:
         <strong>Mala practica:</strong> Evita escribir <code>except:</code> a secas (sin indicar el tipo). Eso atrapa TODOS los errores, incluso los que no esperabas, y oculta fallas reales que deberias corregir.
     </div>
 
-    <!-- Quiz errores -->
     <div class="quiz-container">
         <div class="quiz-question">4. Cual es la forma CORRECTA de capturar un error especifico?</div>
         <div class="quiz-options">
@@ -1609,7 +1595,6 @@ except ValueError as e:
     </div>
 </div>
 
-<!-- ==================== LIBRERIAS ==================== -->
 <div class="section" id="librerias">
     <h2 class="section-title"><span class="section-number">03</span>Librerias Externas</h2>
     <p class="section-subtitle">Como aprovechar codigo que otras personas ya escribieron para no reinventar la rueda.</p>
@@ -1748,7 +1733,6 @@ print(f"Cartas mezcladas: {cartas}")</textarea>
         </div>
     </div>
 
-    <!-- Quiz librerias -->
     <div class="quiz-container">
         <div class="quiz-question">6. Cual es el comando para instalar una libreria externa?</div>
         <div class="quiz-options">
@@ -1796,7 +1780,6 @@ print(f"Cartas mezcladas: {cartas}")</textarea>
     </div>
 </div>
 
-<!-- ==================== SONARQUBE ==================== -->
 <div class="section" id="sonarqube">
     <h2 class="section-title"><span class="section-number">04</span>Auditoria de Codigo con SonarQube</h2>
     <p class="section-subtitle">Como revisar automaticamente la calidad de tu codigo mientras lo escribes, dentro de Visual Studio Code.</p>
@@ -1914,7 +1897,6 @@ print(revisar(None))</textarea>
         <strong>Por que practicar esto desde el inicio:</strong> Acostumbrarte a un auditor de codigo desde tus primeros programas crea buenos habitos: escribiras codigo mas claro, seguro y profesional. Cada aviso de SonarQube es una pequenia leccion de buenas practicas.
     </div>
 
-    <!-- Quiz SonarQube -->
     <div class="quiz-container">
         <div class="quiz-question">8. Cual es la forma correcta de comparar con <code>None</code> en Python?</div>
         <div class="quiz-options">
@@ -1939,7 +1921,6 @@ print(revisar(None))</textarea>
     </div>
 </div>
 
-<!-- ==================== EJERCICIOS ==================== -->
 <div class="section" id="ejercicios">
     <h2 class="section-title"><span class="section-number">05</span>Ejercicios Propuestos</h2>
     <p class="section-subtitle">Practica los cuatro temas con problemas simples. Todos incluyen validacion de datos.</p>
@@ -2040,7 +2021,160 @@ print(revisar(None))</textarea>
     </div>
 </div>
 
-<!-- ==================== PLAYGROUND ==================== -->
+<div class="section" id="segura">
+    <h2 class="section-title"><span class="section-number">06</span>Programación Segura</h2>
+    <p class="section-subtitle">Sistema de Gestión de Credenciales Seguras. Aprende a validar entradas, evitar caracteres peligrosos y auditar tu código.</p>
+
+    <div class="tip-box" style="margin-bottom: 30px;">
+        <strong>Tu objetivo:</strong> Construir un sistema que pida un usuario y contraseña, y valide que cumplan con las reglas de seguridad. Intenta escribir el código tú mismo en cada editor. Si te quedas atascado, puedes usar el botón de reiniciar o ver la solución.
+    </div>
+
+    <div class="exercise-card">
+        <span class="exercise-tag tag-basic">PASO 1</span>
+        <h4>Pedir los datos del usuario</h4>
+        <p style="color: var(--text-secondary); margin-bottom: 15px;">Usa la función <code>input()</code> para pedir el nombre de usuario y guárdalo en una variable. Haz lo mismo para la contraseña. Finalmente, muéstralos con <code>print()</code>.</p>
+        
+        <div class="code-editor-container">
+            <div class="code-editor-header">
+                <span>📝 editor_paso1.py</span>
+                <div class="editor-actions">
+                    <button class="reset-btn" onclick="resetCode('segura1')">↺ Reiniciar</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucionSegura('segura1')">👁️ Ver Solución</button>
+                    <button class="run-btn" onclick="runCode('segura1')">▶ Ejecutar</button>
+                </div>
+            </div>
+            <div class="code-area">
+                <div class="line-numbers" id="ln-segura1">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8</div>
+                <textarea class="code-input" id="code-segura1" spellcheck="false"># 1. Pide el usuario (guárdalo en la variable 'usuario')
+usuario = 
+
+# 2. Pide la contraseña (guárdala en 'password')
+password = 
+
+# 3. Muestra ambos datos con print()
+</textarea>
+            </div>
+            <div class="code-output">
+                <div class="code-output-label">Salida</div>
+                <div class="code-output-content" id="output-segura1">Haz clic en "Ejecutar" para ver el resultado...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <span class="exercise-tag tag-basic">PASO 2</span>
+        <h4>Validar nombres reservados</h4>
+        <p style="color: var(--text-secondary); margin-bottom: 15px;">Crea una lista llamada <code>nombres_reservados</code> con 'admin', 'root' y 'system'. Completa la función para que devuelva <code>True</code> si el usuario está en la lista.</p>
+        
+        <div class="code-editor-container">
+            <div class="code-editor-header">
+                <span>📝 editor_paso2.py</span>
+                <div class="editor-actions">
+                    <button class="reset-btn" onclick="resetCode('segura2')">↺ Reiniciar</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucionSegura('segura2')">👁️ Ver Solución</button>
+                    <button class="run-btn" onclick="runCode('segura2')">▶ Ejecutar</button>
+                </div>
+            </div>
+            <div class="code-area">
+                <div class="line-numbers" id="ln-segura2">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8</div>
+                <textarea class="code-input" id="code-segura2" spellcheck="false">nombres_reservados = []
+
+def es_nombre_reservado(usuario):
+    # Retorna True si el usuario está en la lista, si no False
+    pass
+
+print("¿'admin' reservado?:", es_nombre_reservado('admin'))
+print("¿'pedro' reservado?:", es_nombre_reservado('pedro'))</textarea>
+            </div>
+            <div class="code-output">
+                <div class="code-output-label">Salida</div>
+                <div class="code-output-content" id="output-segura2">Haz clic en "Ejecutar" para ver el resultado...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <span class="exercise-tag tag-intermediate">PASO 3</span>
+        <h4>Detectar caracteres peligrosos</h4>
+        <p style="color: var(--text-secondary); margin-bottom: 15px;">Crea la lista <code>caracteres_no_permitidos</code> con: <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>"</code>. Usa un ciclo <code>for</code> para evaluar la contraseña letra por letra.</p>
+        
+        <div class="code-editor-container">
+            <div class="code-editor-header">
+                <span>📝 editor_paso3.py</span>
+                <div class="editor-actions">
+                    <button class="reset-btn" onclick="resetCode('segura3')">↺ Reiniciar</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucionSegura('segura3')">👁️ Ver Solución</button>
+                    <button class="run-btn" onclick="runCode('segura3')">▶ Ejecutar</button>
+                </div>
+            </div>
+            <div class="code-area">
+                <div class="line-numbers" id="ln-segura3">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8</div>
+                <textarea class="code-input" id="code-segura3" spellcheck="false">caracteres_no_permitidos = []
+
+def tiene_caracteres_no_permitidos(password):
+    # Recorre el password. Si encuentras uno prohibido, retorna True.
+    pass
+
+print("Limpia:", tiene_caracteres_no_permitidos('clave123'))
+print("Peligrosa:", tiene_caracteres_no_permitidos('clave<script>'))</textarea>
+            </div>
+            <div class="code-output">
+                <div class="code-output-label">Salida</div>
+                <div class="code-output-content" id="output-segura3">Haz clic en "Ejecutar" para ver el resultado...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <span class="exercise-tag tag-intermediate">PASO 4</span>
+        <h4>Programa de registro completo</h4>
+        <p style="color: var(--text-secondary); margin-bottom: 15px;">Une todo usando un bloque <code>if / elif / else</code> para evaluar las reglas en orden y mostrar los mensajes correspondientes.</p>
+        
+        <div class="code-editor-container">
+            <div class="code-editor-header">
+                <span>📝 editor_paso4.py</span>
+                <div class="editor-actions">
+                    <button class="reset-btn" onclick="resetCode('segura4')">↺ Reiniciar</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucionSegura('segura4')">👁️ Ver Solución</button>
+                    <button class="run-btn" onclick="runCode('segura4')">▶ Ejecutar</button>
+                </div>
+            </div>
+            <div class="code-area">
+                <div class="line-numbers" id="ln-segura4">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12</div>
+                <textarea class="code-input" id="code-segura4" spellcheck="false">def es_nombre_reservado(u): return u in ['admin', 'root', 'system']
+def caracteres_prohibidos(p): return any(c in ['<', '>', '&', '"'] for c in p)
+
+usuario = input("Ingresa tu usuario: ")
+password = input("Ingresa tu contraseña: ")
+
+if es_nombre_reservado(usuario):
+    print(f"El nombre '{usuario}' está reservado. Elige otro.")
+# Completa con elif para caracteres_prohibidos:
+
+# Completa con else para el registro exitoso:
+</textarea>
+            </div>
+            <div class="code-output">
+                <div class="code-output-label">Salida</div>
+                <div class="code-output-content" id="output-segura4">Haz clic en "Ejecutar" para ver el resultado...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tip-box" style="border-color: var(--accent-purple); background: linear-gradient(135deg, rgba(188, 140, 255, 0.1), rgba(88, 166, 255, 0.05));">
+        <h3 style="color: var(--accent-purple); margin-bottom: 10px;">🤖 ¿Quieres más desafíos? Usa la IA a tu favor</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 15px;">Para seguir entrenando tu lógica sin que la IA te entregue las respuestas estructuradas directamente, puedes copiar y pegar este prompt diseñado para actuar como evaluador de código:</p>
+        
+        <div style="background: #0a0e14; border: 1px solid var(--border); padding: 15px; border-radius: 8px; font-family: monospace; font-size: 0.9rem; color: var(--accent-green); white-space: pre-wrap; position: relative;">
+Actúa como un profesor senior de programación. Soy estudiante de la carrera de Analista Programador y estoy reforzando mi lógica de programación en Python. 
+
+Necesito que me generes 3 ejercicios prácticos enfocados en la validación de datos, uso de condicionales y ciclos (similares a la creación de un sistema de login seguro). Ordénalos de menor a mayor dificultad.
+
+REGLA ESTRICTA: Solo entrégame las instrucciones del problema y los casos de prueba (qué debe entrar y qué debe salir). NO incluyas ninguna línea de código resuelto. Yo escribiré el código y te lo enviaré para que lo evalúes y me des feedback sobre mis buenas prácticas y legibilidad.
+        </div>
+    </div>
+</div>
+
 <div class="section" id="playground">
     <h2 class="section-title"><span class="section-number">🎮</span>Playground Python</h2>
     <p class="section-subtitle">Escribe y ejecuta tu propio codigo Python. Experimenta, prueba ideas y diviertete aprendiendo!</p>
@@ -2102,13 +2236,11 @@ print("\nEscribe tu propio codigo aqui...")</textarea>
     </div>
 </div>
 
-<!-- Score Board -->
 <div class="score-board">
     <h4>🏆 Puntuacion</h4>
     <div class="score-value" id="scoreValue">0/8</div>
 </div>
 
-<!-- Footer -->
 <footer>
     <p>Guia Interactiva de Python • Estructuras de datos, excepciones, librerias y auditoria de codigo</p>
     <p style="margin-top: 10px; font-size: 0.9rem;">Hecho con ❤️ para aprender practicando</p>
@@ -2144,6 +2276,14 @@ const defaultCodes = {
 
     sonargood: `# Version corregida, mas limpia y segura\n\ndef revisar(valor):\n    if valor is None:          # Forma correcta de comparar con None\n        print("vacio")\n        return None\n    try:\n        n = int(valor)\n        return 100 / n\n    except ValueError:         # Capturamos el error especifico\n        print("El valor no es un numero.")\n        return None\n    except ZeroDivisionError:\n        print("No se puede dividir por cero.")\n        return None\n\nprint(revisar("5"))\nprint(revisar("abc"))\nprint(revisar(None))`,
 
+    segura1: `# 1. Pide el usuario (guárdalo en la variable 'usuario')\nusuario = \n\n# 2. Pide la contraseña (guárdala en 'password')\npassword = \n\n# 3. Muestra ambos datos con print()\n`,
+    
+    segura2: `nombres_reservados = []\n\ndef es_nombre_reservado(usuario):\n    # Retorna True si el usuario está en la lista, si no False\n    pass\n\nprint("¿'admin' reservado?:", es_nombre_reservado('admin'))\nprint("¿'pedro' reservado?:", es_nombre_reservado('pedro'))`,
+    
+    segura3: `caracteres_no_permitidos = []\n\ndef tiene_caracteres_no_permitidos(password):\n    # Recorre el password. Si encuentras uno prohibido, retorna True.\n    pass\n\nprint("Limpia:", tiene_caracteres_no_permitidos('clave123'))\nprint("Peligrosa:", tiene_caracteres_no_permitidos('clave<script>'))`,
+    
+    segura4: `def es_nombre_reservado(u): return u in ['admin', 'root', 'system']\ndef caracteres_prohibidos(p): return any(c in ['<', '>', '&', '"'] for c in p)\n\nusuario = input("Ingresa tu usuario: ")\npassword = input("Ingresa tu contraseña: ")\n\nif es_nombre_reservado(usuario):\n    print(f"El nombre '{usuario}' está reservado. Elige otro.")\n# Completa con elif para caracteres_prohibidos:\n\n# Completa con else para el registro exitoso:\n`,
+
     playground: `# Bienvenido al Playground!\n# Escribe cualquier codigo Python aqui y ejecutalo.\n# Algunas ideas para probar:\n\n# 1. Jugar con listas\nmi_lista = [1, 2, 3, 4, 5]\nprint("Mi lista:", mi_lista)\nprint("Al cuadrado:", [x**2 for x in mi_lista])\n\n# 2. Crear una funcion\ndef saludar(nombre):\n    return f"Hola, {nombre}! 🐍"\n\nprint(saludar("Programador"))\n\n# 3. Experimenta tu mismo!\nprint("\\nEscribe tu propio codigo aqui...")`
 };
 
@@ -2163,6 +2303,19 @@ async function initPyodide() {
         pyodide = await loadPyodide({
             indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/"
         });
+        
+        // PARCHE PARA INPUT() - Esto hace que los inputs funcionen con pop-ups del navegador
+        await pyodide.runPythonAsync(`
+import builtins
+import js
+
+def browser_input(prompt_text=""):
+    result = js.prompt(prompt_text)
+    return result if result is not None else ""
+
+builtins.input = browser_input
+        `);
+
         clearTimeout(safetyTimeout);
         document.getElementById('loadingOverlay').classList.add('hidden');
     } catch (e) {
@@ -2224,6 +2377,29 @@ function resetCode(id) {
     document.getElementById('code-' + id).value = defaultCodes[id] || '';
     document.getElementById('output-' + id).textContent = 'Haz clic en "Ejecutar" para ver el resultado...';
     document.getElementById('output-' + id).className = 'code-output-content';
+    
+    // Fuerza la actualización de las líneas guía laterales
+    const textarea = document.getElementById('code-' + id);
+    if (textarea) {
+        const lines = textarea.value.split('\n').length;
+        document.getElementById('ln-' + id).innerHTML = Array.from({length: lines}, (_, i) => i + 1).join('<br>');
+    }
+}
+
+function mostrarSolucionSegura(id) {
+    const solucionesSegura = {
+        segura1: `usuario = input("Ingresa tu nombre de usuario: ")\npassword = input("Ingresa tu contraseña: ")\n\nprint("Usuario ingresado:", usuario)\nprint("Contraseña ingresada:", password)`,
+        segura2: `nombres_reservados = ['admin', 'root', 'system']\n\ndef es_nombre_reservado(usuario):\n    return usuario in nombres_reservados\n\nprint("¿'admin' reservado?:", es_nombre_reservado('admin'))\nprint("¿'pedro' reservado?:", es_nombre_reservado('pedro'))`,
+        segura3: `caracteres_no_permitidos = ['<', '>', '&', '"']\n\ndef tiene_caracteres_no_permitidos(password):\n    for caracter in password:\n        if caracter in caracteres_no_permitidos:\n            return True\n    return False\n\nprint("Limpia:", tiene_caracteres_no_permitidos('clave123'))\nprint("Peligrosa:", tiene_caracteres_no_permitidos('clave<script>'))`,
+        segura4: `def es_nombre_reservado(u): return u in ['admin', 'root', 'system']\ndef caracteres_prohibidos(p): return any(c in ['<', '>', '&', '"'] for c in p)\n\nusuario = input("Ingresa tu usuario: ")\npassword = input("Ingresa tu contraseña: ")\n\nif es_nombre_reservado(usuario):\n    print(f"El nombre '{usuario}' está reservado. Elige otro.")\nelif caracteres_prohibidos(password):\n    print("Error: La contraseña contiene caracteres no permitidos.")\nelse:\n    print(f"¡Registro exitoso! Bienvenido, {usuario}.")`
+    };
+    
+    const textarea = document.getElementById('code-' + id);
+    if (textarea) {
+        textarea.value = solucionesSegura[id];
+        const lines = textarea.value.split('\n').length;
+        document.getElementById('ln-' + id).innerHTML = Array.from({length: lines}, (_, i) => i + 1).join('<br>');
+    }
 }
 
 // ==================== QUIZ SYSTEM ====================
