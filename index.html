@@ -974,17 +974,18 @@
 <header>
     <div class="python-icon">🐍</div>
     <h1>Guia Interactiva de Python</h1>
-    <p>Estructuras de datos, manejo de errores, librerias externas y auditoria de codigo. Aprende practicando con codigo real que ejecutas en tu navegador.</p>
+    <p>Fundamentos, estructuras de datos, manejo de errores, librerias y auditoria. Aprende practicando con codigo real.</p>
 </header>
 
 <nav>
     <button class="active" onclick="showSection('inicio', this)">🏠 Inicio</button>
-    <button onclick="showSection('estructuras', this)">📦 Estructuras de Datos</button>
-    <button onclick="showSection('errores', this)">🛡️ Manejo de Errores</button>
+    <button onclick="showSection('fundamentos', this)">🧱 Fundamentos</button>
+    <button onclick="showSection('estructuras', this)">📦 Estructuras</button>
+    <button onclick="showSection('errores', this)">🛡️ Errores</button>
     <button onclick="showSection('librerias', this)">📚 Librerias</button>
     <button onclick="showSection('sonarqube', this)">🔍 SonarQube</button>
     <button onclick="showSection('ejercicios', this)">💪 Ejercicios</button>
-    <button onclick="showSection('segura', this)">🔐 Programación Segura</button>
+    <button onclick="showSection('segura', this)">🔐 Prog. Segura</button>
     <button onclick="showSection('playground', this)">🎮 Playground</button>
 </nav>
 
@@ -1001,18 +1002,18 @@
                 <li><strong>Voltea</strong> las tarjetas para revelar informacion extra</li>
                 <li><strong>Responde</strong> los quizzes para probar tus conocimientos</li>
                 <li><strong>Ejecuta</strong> codigo Python directamente en el navegador</li>
-                <li><strong>Practica</strong> en el Playground con tu propio codigo</li>
             </ul>
         </div>
         <div class="card">
             <h3>📋 Contenido de la guia</h3>
             <ul>
-                <li><strong>Seccion 1:</strong> Estructuras de datos (listas, tuplas, diccionarios, conjuntos)</li>
-                <li><strong>Seccion 2:</strong> Manejo de errores y excepciones</li>
-                <li><strong>Seccion 3:</strong> Librerias externas y entornos virtuales</li>
-                <li><strong>Seccion 4:</strong> Auditoria de codigo con SonarQube</li>
-                <li><strong>Seccion 5:</strong> Ejercicios practicos propuestos</li>
-                <li><strong>Seccion 6:</strong> Programación Segura</li>
+                <li><strong>Seccion 1:</strong> Fundamentos, Tipos y Operadores</li>
+                <li><strong>Seccion 2:</strong> Estructuras (listas, tuplas, dicts, sets)</li>
+                <li><strong>Seccion 3:</strong> Manejo de errores (try/except)</li>
+                <li><strong>Seccion 4:</strong> Librerias externas y entornos virtuales</li>
+                <li><strong>Seccion 5:</strong> Auditoria de codigo con SonarQube</li>
+                <li><strong>Seccion 6:</strong> Ejercicios practicos propuestos</li>
+                <li><strong>Seccion 7:</strong> Programacion Segura Interactiva</li>
             </ul>
         </div>
         <div class="card">
@@ -1111,8 +1112,159 @@
     </div>
 </div>
 
+<div class="section" id="fundamentos">
+    <h2 class="section-title"><span class="section-number">01</span>Fundamentos Básicos</h2>
+    <p class="section-subtitle">Antes de armar lógicas complejas, debes dominar las herramientas básicas: cómo mostrar texto, cómo manejar variables y cómo operar con ellas.</p>
+
+    <h3 style="color: var(--accent); margin-top: 30px;">🗣️ Formateo de Textos con f-strings</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 15px;">Aunque puedes unir texto usando comas en el <code>print()</code>, la forma más moderna y profesional de mezclar texto y variables en Python son los <strong>f-strings</strong> (solo pones una "f" antes de las comillas y las variables van entre llaves).</p>
+
+    <div class="code-editor-container">
+        <div class="code-editor-header">
+            <span>📝 Ejemplo: Domina el print y los f-strings</span>
+            <div class="editor-actions">
+                <button class="reset-btn" onclick="resetCode('fundamentos1')">↺ Reset</button>
+                <button class="run-btn" onclick="runCode('fundamentos1')">▶ Ejecutar</button>
+            </div>
+        </div>
+        <div class="code-area">
+            <div class="line-numbers" id="ln-fundamentos1">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11</div>
+            <textarea class="code-input" id="code-fundamentos1" spellcheck="false"># Trucos ocultos del print clásico
+print("Hola", "Mundo", "Cruel", sep=" - ") # sep cambia el espacio por defecto
+print("Cargando...", end="")               # end evita el salto de línea automático
+print("¡Listo!")
+
+# F-strings: La forma moderna
+sistema = "FastAPI"
+version = 3.11
+rendimiento = 98.5
+
+print(f"[{sistema} v{version}] Servidor iniciado con {rendimiento}% de rendimiento.")</textarea>
+        </div>
+        <div class="code-output">
+            <div class="code-output-label">Salida</div>
+            <div class="code-output-content" id="output-fundamentos1">Haz clic en "Ejecutar" para ver el resultado...</div>
+        </div>
+    </div>
+
+    <h3 style="color: var(--accent); margin-top: 40px;">🏷️ Tipos de Datos y Conversión</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 15px;">Python es de tipado dinámico: no necesitas avisarle qué tipo de variable estás creando, él lo adivina. Para comprobarlo, usamos <code>type()</code>. ¡Ojo! Lo que ingresa el usuario con <code>input()</code> <strong>siempre</strong> llega como texto (str).</p>
+
+    <div class="code-editor-container">
+        <div class="code-editor-header">
+            <span>📝 Ejemplo: Explorando tipos con type()</span>
+            <div class="editor-actions">
+                <button class="reset-btn" onclick="resetCode('fundamentos2')">↺ Reset</button>
+                <button class="run-btn" onclick="runCode('fundamentos2')">▶ Ejecutar</button>
+            </div>
+        </div>
+        <div class="code-area">
+            <div class="line-numbers" id="ln-fundamentos2">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15</div>
+            <textarea class="code-input" id="code-fundamentos2" spellcheck="false">texto = "Servidor Web"      # str (String / Cadena)
+entero = 404              # int (Integer / Entero)
+decimal = 99.9            # float (Flotante / Decimal)
+es_activo = True          # bool (Boolean / Lógico - Siempre con Mayúscula)
+
+print(f"El valor {entero} es de tipo: {type(entero)}")
+print(f"El valor {decimal} es de tipo: {type(decimal)}")
+
+# Conversión de tipos (Casting)
+numero_como_texto = "500"
+print(f"Originalmente es: {type(numero_como_texto)}")
+
+# Lo transformamos a entero para poder operar matemáticamente
+numero_real = int(numero_como_texto)
+print(f"Transformado a int, ahora es: {type(numero_real)}")</textarea>
+        </div>
+        <div class="code-output">
+            <div class="code-output-label">Salida</div>
+            <div class="code-output-content" id="output-fundamentos2">Haz clic en "Ejecutar" para ver el resultado...</div>
+        </div>
+    </div>
+
+    <h3 style="color: var(--accent); margin-top: 40px;">🧮 Operadores Matemáticos y Lógicos</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 15px;">Si vienes de lenguajes o pseudocódigos estrictos, te encantarán los operadores de Python. Aparte de los clásicos (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>), estos son vitales para resolver algoritmos.</p>
+
+    <div class="code-editor-container">
+        <div class="code-editor-header">
+            <span>📝 Ejemplo: Matemáticas y Lógica Booleana</span>
+            <div class="editor-actions">
+                <button class="reset-btn" onclick="resetCode('fundamentos3')">↺ Reset</button>
+                <button class="run-btn" onclick="runCode('fundamentos3')">▶ Ejecutar</button>
+            </div>
+        </div>
+        <div class="code-area">
+            <div class="line-numbers" id="ln-fundamentos3">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13</div>
+            <textarea class="code-input" id="code-fundamentos3" spellcheck="false"># Matemáticas Avanzadas
+print("División normal (10 / 3):", 10 / 3)
+print("División entera (10 // 3):", 10 // 3) # Corta los decimales
+print("Módulo o Resto (10 % 3):", 10 % 3)    # Súper útil para saber si un número es par o impar
+print("Potencia (2 ** 3):", 2 ** 3)          # Dos elevado a la tres
+
+# Operadores Lógicos (and, or, not)
+tiene_acceso = True
+es_admin = False
+
+print("\n--- LÓGICA DE ACCESOS ---")
+print("¿Puede entrar al panel principal? (and):", tiene_acceso and es_admin)
+print("¿Al menos tiene alguna validación? (or):", tiene_acceso or es_admin)
+print("Negación de admin (not):", not es_admin)</textarea>
+        </div>
+        <div class="code-output">
+            <div class="code-output-label">Salida</div>
+            <div class="code-output-content" id="output-fundamentos3">Haz clic en "Ejecutar" para ver el resultado...</div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="quiz-question">2. ¿Qué operador matemático usarías para comprobar si un número es par?</div>
+        <div class="quiz-options">
+            <div class="quiz-option" onclick="checkAnswer(this, false)">
+                <span class="quiz-letter">A</span>
+                <span><code>//</code> (División entera)</span>
+            </div>
+            <div class="quiz-option" onclick="checkAnswer(this, true)">
+                <span class="quiz-letter">B</span>
+                <span><code>%</code> (Módulo)</span>
+            </div>
+            <div class="quiz-option" onclick="checkAnswer(this, false)">
+                <span class="quiz-letter">C</span>
+                <span><code>/</code> (División normal)</span>
+            </div>
+            <div class="quiz-option" onclick="checkAnswer(this, false)">
+                <span class="quiz-letter">D</span>
+                <span><code>**</code> (Potencia)</span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="quiz-feedback-9"></div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="quiz-question">3. ¿Qué tipo de dato devolverá la función <code>type("404")</code>?</div>
+        <div class="quiz-options">
+            <div class="quiz-option" onclick="checkAnswer(this, false)">
+                <span class="quiz-letter">A</span>
+                <span><code>&lt;class 'int'&gt;</code></span>
+            </div>
+            <div class="quiz-option" onclick="checkAnswer(this, false)">
+                <span class="quiz-letter">B</span>
+                <span><code>&lt;class 'float'&gt;</code></span>
+            </div>
+            <div class="quiz-option" onclick="checkAnswer(this, true)">
+                <span class="quiz-letter">C</span>
+                <span><code>&lt;class 'str'&gt;</code></span>
+            </div>
+            <div class="quiz-option" onclick="checkAnswer(this, false)">
+                <span class="quiz-letter">D</span>
+                <span><code>&lt;class 'error'&gt;</code></span>
+            </div>
+        </div>
+        <div class="quiz-feedback" id="quiz-feedback-10"></div>
+    </div>
+</div>
+
 <div class="section" id="estructuras">
-    <h2 class="section-title"><span class="section-number">01</span>Estructuras de Datos</h2>
+    <h2 class="section-title"><span class="section-number">02</span>Estructuras de Datos</h2>
     <p class="section-subtitle">Como organizar y guardar varios datos a la vez dentro de un programa. Listas, tuplas, diccionarios y conjuntos.</p>
 
     <h3 style="color: var(--accent); margin-top: 30px;">📋 Listas <span class="badge badge-lista">list</span></h3>
@@ -1343,7 +1495,7 @@ print("3 esta en a?:", 3 in a)</textarea>
     </table>
 
     <div class="quiz-container">
-        <div class="quiz-question">2. Cual es la diferencia clave entre una lista y una tupla?</div>
+        <div class="quiz-question">4. Cual es la diferencia clave entre una lista y una tupla?</div>
         <div class="quiz-options">
             <div class="quiz-option" onclick="checkAnswer(this, false)">
                 <span class="quiz-letter">A</span>
@@ -1366,7 +1518,7 @@ print("3 esta en a?:", 3 in a)</textarea>
     </div>
 
     <div class="quiz-container">
-        <div class="quiz-question">3. En un diccionario, que metodo devuelve el valor de una clave sin lanzar error si no existe?</div>
+        <div class="quiz-question">5. En un diccionario, que metodo devuelve el valor de una clave sin lanzar error si no existe?</div>
         <div class="quiz-options">
             <div class="quiz-option" onclick="checkAnswer(this, false)">
                 <span class="quiz-letter">A</span>
@@ -1390,7 +1542,7 @@ print("3 esta en a?:", 3 in a)</textarea>
 </div>
 
 <div class="section" id="errores">
-    <h2 class="section-title"><span class="section-number">02</span>Manejo de Errores y Excepciones</h2>
+    <h2 class="section-title"><span class="section-number">03</span>Manejo de Errores y Excepciones</h2>
     <p class="section-subtitle">Como lograr que tu programa no se caiga ante un dato incorrecto o una situacion inesperada.</p>
 
     <div class="card-grid">
@@ -1549,7 +1701,7 @@ except ValueError as e:
     </div>
 
     <div class="quiz-container">
-        <div class="quiz-question">4. Cual es la forma CORRECTA de capturar un error especifico?</div>
+        <div class="quiz-question">6. Cual es la forma CORRECTA de capturar un error especifico?</div>
         <div class="quiz-options">
             <div class="quiz-option" onclick="checkAnswer(this, false)">
                 <span class="quiz-letter">A</span>
@@ -1572,7 +1724,7 @@ except ValueError as e:
     </div>
 
     <div class="quiz-container">
-        <div class="quiz-question">5. Que bloque se ejecuta SIEMPRE, haya o no error?</div>
+        <div class="quiz-question">7. Que bloque se ejecuta SIEMPRE, haya o no error?</div>
         <div class="quiz-options">
             <div class="quiz-option" onclick="checkAnswer(this, false)">
                 <span class="quiz-letter">A</span>
@@ -1596,7 +1748,7 @@ except ValueError as e:
 </div>
 
 <div class="section" id="librerias">
-    <h2 class="section-title"><span class="section-number">03</span>Librerias Externas</h2>
+    <h2 class="section-title"><span class="section-number">04</span>Librerias Externas</h2>
     <p class="section-subtitle">Como aprovechar codigo que otras personas ya escribieron para no reinventar la rueda.</p>
 
     <div class="card-grid">
@@ -1701,7 +1853,7 @@ print("floor(4.9) =", m.floor(4.9))</textarea>
             <span>📝 Ejemplo: Librerias estandar en accion</span>
             <div class="editor-actions">
                 <button class="reset-btn" onclick="resetCode('librandom')">↺ Reset</button>
-                <button class="run-btn" onclick="runCode('librandom')">▶ Ejecutar</button>
+                <button class="run-btn" onclick="librandom')">▶ Ejecutar</button>
             </div>
         </div>
         <div class="code-area">
@@ -1734,7 +1886,7 @@ print(f"Cartas mezcladas: {cartas}")</textarea>
     </div>
 
     <div class="quiz-container">
-        <div class="quiz-question">6. Cual es el comando para instalar una libreria externa?</div>
+        <div class="quiz-question">8. Cual es el comando para instalar una libreria externa?</div>
         <div class="quiz-options">
             <div class="quiz-option" onclick="checkAnswer(this, false)">
                 <span class="quiz-letter">A</span>
@@ -1757,7 +1909,7 @@ print(f"Cartas mezcladas: {cartas}")</textarea>
     </div>
 
     <div class="quiz-container">
-        <div class="quiz-question">7. Para que sirve un entorno virtual (venv)?</div>
+        <div class="quiz-question">9. Para que sirve un entorno virtual (venv)?</div>
         <div class="quiz-options">
             <div class="quiz-option" onclick="checkAnswer(this, false)">
                 <span class="quiz-letter">A</span>
@@ -1781,7 +1933,7 @@ print(f"Cartas mezcladas: {cartas}")</textarea>
 </div>
 
 <div class="section" id="sonarqube">
-    <h2 class="section-title"><span class="section-number">04</span>Auditoria de Codigo con SonarQube</h2>
+    <h2 class="section-title"><span class="section-number">05</span>Auditoria de Codigo con SonarQube</h2>
     <p class="section-subtitle">Como revisar automaticamente la calidad de tu codigo mientras lo escribes, dentro de Visual Studio Code.</p>
 
     <div class="card-grid">
@@ -1898,7 +2050,7 @@ print(revisar(None))</textarea>
     </div>
 
     <div class="quiz-container">
-        <div class="quiz-question">8. Cual es la forma correcta de comparar con <code>None</code> en Python?</div>
+        <div class="quiz-question">10. Cual es la forma correcta de comparar con <code>None</code> en Python?</div>
         <div class="quiz-options">
             <div class="quiz-option" onclick="checkAnswer(this, false)">
                 <span class="quiz-letter">A</span>
@@ -1922,7 +2074,7 @@ print(revisar(None))</textarea>
 </div>
 
 <div class="section" id="ejercicios">
-    <h2 class="section-title"><span class="section-number">05</span>Ejercicios Propuestos</h2>
+    <h2 class="section-title"><span class="section-number">06</span>Ejercicios Propuestos</h2>
     <p class="section-subtitle">Practica los cuatro temas con problemas simples. Todos incluyen validacion de datos.</p>
 
     <div class="exercise-card">
@@ -2022,7 +2174,7 @@ print(revisar(None))</textarea>
 </div>
 
 <div class="section" id="segura">
-    <h2 class="section-title"><span class="section-number">06</span>Programación Segura</h2>
+    <h2 class="section-title"><span class="section-number">07</span>Programación Segura</h2>
     <p class="section-subtitle">Sistema de Gestión de Credenciales Seguras. Aprende a validar entradas, evitar caracteres peligrosos y auditar tu código.</p>
 
     <div class="tip-box" style="margin-bottom: 30px;">
@@ -2238,7 +2390,7 @@ print("\nEscribe tu propio codigo aqui...")</textarea>
 
 <div class="score-board">
     <h4>🏆 Puntuacion</h4>
-    <div class="score-value" id="scoreValue">0/8</div>
+    <div class="score-value" id="scoreValue">0/10</div>
 </div>
 
 <footer>
@@ -2250,10 +2402,16 @@ print("\nEscribe tu propio codigo aqui...")</textarea>
 // ==================== GLOBAL STATE ====================
 let pyodide = null;
 let score = 0;
-const totalQuizzes = 8;
+const totalQuizzes = 10;
 const answeredQuizzes = new Set();
 
 const defaultCodes = {
+    fundamentos1: `# Trucos ocultos del print clásico\nprint("Hola", "Mundo", "Cruel", sep=" - ") # sep cambia el espacio por defecto\nprint("Cargando...", end="")               # end evita el salto de línea automático\nprint("¡Listo!")\n\n# F-strings: La forma moderna\nsistema = "FastAPI"\nversion = 3.11\nrendimiento = 98.5\n\nprint(f"[{sistema} v{version}] Servidor iniciado con {rendimiento}% de rendimiento.")`,
+    
+    fundamentos2: `texto = "Servidor Web"      # str (String / Cadena)\nentero = 404              # int (Integer / Entero)\ndecimal = 99.9            # float (Flotante / Decimal)\nes_activo = True          # bool (Boolean / Lógico - Siempre con Mayúscula)\n\nprint(f"El valor {entero} es de tipo: {type(entero)}")\nprint(f"El valor {decimal} es de tipo: {type(decimal)}")\n\n# Conversión de tipos (Casting)\nnumero_como_texto = "500"\nprint(f"Originalmente es: {type(numero_como_texto)}")\n\n# Lo transformamos a entero para poder operar matemáticamente\nnumero_real = int(numero_como_texto)\nprint(f"Transformado a int, ahora es: {type(numero_real)}")`,
+    
+    fundamentos3: `# Matemáticas Avanzadas\nprint("División normal (10 / 3):", 10 / 3)\nprint("División entera (10 // 3):", 10 // 3) # Corta los decimales\nprint("Módulo o Resto (10 % 3):", 10 % 3)    # Súper útil para saber si un número es par o impar\nprint("Potencia (2 ** 3):", 2 ** 3)          # Dos elevado a la tres\n\n# Operadores Lógicos (and, or, not)\ntiene_acceso = True\nes_admin = False\n\nprint("\\n--- LÓGICA DE ACCESOS ---")\nprint("¿Puede entrar al panel principal? (and):", tiene_acceso and es_admin)\nprint("¿Al menos tiene alguna validación? (or):", tiene_acceso or es_admin)\nprint("Negación de admin (not):", not es_admin)`,
+
     listas: `# Crear listas\nnotas = [4.5, 6.0, 3.2, 5.8]\nnombres = ["Ana", "Luis", "Sofia"]\n\n# Acceder por indice (empieza en 0)\nprint("Primero:", nombres[0])\nprint("Ultimo:", nombres[-1])\n\n# Modificar\nnotas[0] = 5.0\nprint("Notas actualizadas:", notas)\n\n# Slicing (sublistas)\nprint("Primeros 2:", notas[:2])\nprint("Del 2 en adelante:", notas[2:])\n\n# Funciones utiles\nprint("Promedio:", sum(notas) / len(notas))`,
 
     tuplas: `# Crear tuplas\npunto = (10, 20)\ncolores = ("rojo", "verde", "azul")\n\n# Acceder (igual que listas)\nprint("Primer color:", colores[0])\nprint("Cantidad:", len(colores))\n\n# Desempaquetado: repartir en variables\nx, y = punto\nprint(f"x={x}, y={y}")\n\n# Intercambiar valores sin variable auxiliar\na, b = 1, 2\na, b = b, a\nprint(f"a={a}, b={b}")`,
@@ -2289,7 +2447,6 @@ const defaultCodes = {
 
 // ==================== INIT PYODIDE ====================
 async function initPyodide() {
-    // Salvavidas: Forzamos que la pantalla de carga se oculte tras 5 segundos sí o sí
     const safetyTimeout = setTimeout(() => {
         const overlay = document.getElementById('loadingOverlay');
         if (overlay && !overlay.classList.contains('hidden')) {
@@ -2299,7 +2456,6 @@ async function initPyodide() {
     }, 5000);
 
     try {
-        // Añadimos el indexURL que a veces es necesario para que no se quede colgado
         pyodide = await loadPyodide({
             indexURL: "https://cdn.jsdelivr.net/pyodide/v0.25.0/full/"
         });
@@ -2323,7 +2479,6 @@ builtins.input = browser_input
         document.querySelector('.loading-text').textContent = 'Fallo al cargar Python. Aún puedes leer la guía (sin ejecutar código).';
         console.error("Error de Pyodide:", e);
         
-        // Si falla, mostramos el mensaje de error por 2 segundos y luego quitamos el muro
         setTimeout(() => {
             document.getElementById('loadingOverlay').classList.add('hidden');
         }, 2000);
@@ -2378,7 +2533,6 @@ function resetCode(id) {
     document.getElementById('output-' + id).textContent = 'Haz clic en "Ejecutar" para ver el resultado...';
     document.getElementById('output-' + id).className = 'code-output-content';
     
-    // Fuerza la actualización de las líneas guía laterales
     const textarea = document.getElementById('code-' + id);
     if (textarea) {
         const lines = textarea.value.split('\n').length;
