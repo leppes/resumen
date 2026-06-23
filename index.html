@@ -381,27 +381,6 @@
             color: var(--text-secondary);
         }
 
-        .editor-tabs {
-            display: flex;
-            gap: 5px;
-        }
-
-        .editor-tab {
-            padding: 5px 15px;
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.8rem;
-        }
-
-        .editor-tab.active {
-            background: var(--accent);
-            color: #fff;
-            border-color: var(--accent);
-        }
-
         .code-area {
             display: flex;
             min-height: 250px;
@@ -986,6 +965,7 @@
     <button onclick="showSection('sonarqube', this)">🔍 SonarQube</button>
     <button onclick="showSection('ejercicios', this)">💪 Ejercicios</button>
     <button onclick="showSection('segura', this)">🔐 Prog. Segura</button>
+    <button onclick="showSection('prueba', this)" style="border-color: var(--accent-purple); color: var(--accent-purple);">🚨 Ensayo Prueba</button>
     <button onclick="showSection('playground', this)">🎮 Playground</button>
 </nav>
 
@@ -1014,6 +994,7 @@
                 <li><strong>Seccion 5:</strong> Auditoria de codigo con SonarQube</li>
                 <li><strong>Seccion 6:</strong> Ejercicios practicos propuestos</li>
                 <li><strong>Seccion 7:</strong> Programacion Segura Interactiva</li>
+                <li><strong>Seccion 8:</strong> Ensayo de Prueba Práctica (Nuevo)</li>
             </ul>
         </div>
         <div class="card">
@@ -1853,7 +1834,7 @@ print("floor(4.9) =", m.floor(4.9))</textarea>
             <span>📝 Ejemplo: Librerias estandar en accion</span>
             <div class="editor-actions">
                 <button class="reset-btn" onclick="resetCode('librandom')">↺ Reset</button>
-                <button class="run-btn" onclick="librandom')">▶ Ejecutar</button>
+                <button class="run-btn" onclick="runCode('librandom')">▶ Ejecutar</button>
             </div>
         </div>
         <div class="code-area">
@@ -2191,7 +2172,7 @@ print(revisar(None))</textarea>
                 <span>📝 editor_paso1.py</span>
                 <div class="editor-actions">
                     <button class="reset-btn" onclick="resetCode('segura1')">↺ Reiniciar</button>
-                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucionSegura('segura1')">👁️ Ver Solución</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucion('segura1')">👁️ Ver Solución</button>
                     <button class="run-btn" onclick="runCode('segura1')">▶ Ejecutar</button>
                 </div>
             </div>
@@ -2223,7 +2204,7 @@ password =
                 <span>📝 editor_paso2.py</span>
                 <div class="editor-actions">
                     <button class="reset-btn" onclick="resetCode('segura2')">↺ Reiniciar</button>
-                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucionSegura('segura2')">👁️ Ver Solución</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucion('segura2')">👁️ Ver Solución</button>
                     <button class="run-btn" onclick="runCode('segura2')">▶ Ejecutar</button>
                 </div>
             </div>
@@ -2255,7 +2236,7 @@ print("¿'pedro' reservado?:", es_nombre_reservado('pedro'))</textarea>
                 <span>📝 editor_paso3.py</span>
                 <div class="editor-actions">
                     <button class="reset-btn" onclick="resetCode('segura3')">↺ Reiniciar</button>
-                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucionSegura('segura3')">👁️ Ver Solución</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucion('segura3')">👁️ Ver Solución</button>
                     <button class="run-btn" onclick="runCode('segura3')">▶ Ejecutar</button>
                 </div>
             </div>
@@ -2287,7 +2268,7 @@ print("Peligrosa:", tiene_caracteres_no_permitidos('clave<hacker>'))</textarea>
                 <span>📝 editor_paso4.py</span>
                 <div class="editor-actions">
                     <button class="reset-btn" onclick="resetCode('segura4')">↺ Reiniciar</button>
-                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucionSegura('segura4')">👁️ Ver Solución</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucion('segura4')">👁️ Ver Solución</button>
                     <button class="run-btn" onclick="runCode('segura4')">▶ Ejecutar</button>
                 </div>
             </div>
@@ -2325,6 +2306,162 @@ Necesito que me generes 3 ejercicios prácticos enfocados en la validación de d
 REGLA ESTRICTA: Solo entrégame las instrucciones del problema y los casos de prueba (qué debe entrar y qué debe salir). NO incluyas ninguna línea de código resuelto. Yo escribiré el código y te lo enviaré para que lo evalúes y me des feedback sobre mis buenas prácticas y legibilidad.
         </div>
     </div>
+</div>
+
+<div class="section" id="prueba">
+    <h2 class="section-title" style="color: var(--accent-purple);"><span class="section-number" style="background: linear-gradient(135deg, var(--accent-purple), var(--accent));">08</span>Ensayo de Prueba: Control de Producción</h2>
+    <p class="section-subtitle">Paso a paso para construir el sistema de la <strong>Maestranza Aurora SpA</strong>. Si dominas esto, estarás listo para la prueba real.</p>
+
+    <div class="card" style="border-left: 4px solid var(--accent-yellow); margin-bottom: 30px;">
+        <h3>Contexto del Problema</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 10px;">Debes construir un programa de consola con un menú repetitivo (while) para registrar piezas producidas y defectuosas de varias máquinas. Los datos se guardan en una lista de diccionarios.</p>
+        <p style="color: var(--text-secondary);"><strong>Reglas clave:</strong> Validar que las entradas sean números enteros, que no existan cantidades negativas y que las piezas defectuosas no superen a las producidas. Finalmente, se debe generar un reporte mostrando porcentajes y máquinas críticas (>5% de fallos).</p>
+    </div>
+
+    <div class="exercise-card">
+        <span class="exercise-tag tag-basic">PASO 1</span>
+        <h4>Estructura Principal y Menú</h4>
+        <p style="color: var(--text-secondary); margin-bottom: 15px;">Lo primero es crear una lista vacía para guardar la producción y armar un <code>while True</code> para mostrar el menú infinitamente hasta que el usuario elija "Salir". Usa `if` y `elif` para controlar las opciones.</p>
+        
+        <div class="code-editor-container">
+            <div class="code-editor-header">
+                <span>📝 1_menu.py</span>
+                <div class="editor-actions">
+                    <button class="reset-btn" onclick="resetCode('prueba1')">↺ Reiniciar</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucion('prueba1')">👁️ Ver Solución</button>
+                    <button class="run-btn" onclick="runCode('prueba1')">▶ Ejecutar</button>
+                </div>
+            </div>
+            <div class="code-area">
+                <div class="line-numbers" id="ln-prueba1">1<br>2<br>3<br>4<br>5<br>6</div>
+                <textarea class="code-input" id="code-prueba1" spellcheck="false"># 1. Crea la lista vacía 'produccion'
+
+# 2. Crea un ciclo while True para el menú
+    # 3. Muestra las opciones (1. Registrar, 2. Ver, 3. Salir)
+    # 4. Pide la opción con input()
+    # 5. Usa if/elif para cada opción y un break en la opción 3</textarea>
+            </div>
+            <div class="code-output">
+                <div class="code-output-label">Salida</div>
+                <div class="code-output-content" id="output-prueba1">Haz clic en "Ejecutar" para ver el resultado...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <span class="exercise-tag tag-intermediate">PASO 2</span>
+        <h4>Opción 1: Ingreso de Datos y Validaciones</h4>
+        <p style="color: var(--text-secondary); margin-bottom: 15px;">La parte en la que más estudiantes fallan: las validaciones. Debes asegurarte de atrapar un posible <code>ValueError</code> si escriben letras, y usar condiciones <code>if</code> para la lógica del negocio (nada de números negativos, y defectuosas <= producidas).</p>
+        
+        <div class="code-editor-container">
+            <div class="code-editor-header">
+                <span>📝 2_validaciones.py</span>
+                <div class="editor-actions">
+                    <button class="reset-btn" onclick="resetCode('prueba2')">↺ Reiniciar</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucion('prueba2')">👁️ Ver Solución</button>
+                    <button class="run-btn" onclick="runCode('prueba2')">▶ Ejecutar</button>
+                </div>
+            </div>
+            <div class="code-area">
+                <div class="line-numbers" id="ln-prueba2">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16</div>
+                <textarea class="code-input" id="code-prueba2" spellcheck="false">produccion = []
+
+try:
+    codigo = input("Código máquina: ")
+    producidas = int(input("Piezas producidas: "))
+    defectuosas = int(input("Piezas defectuosas: "))
+    
+    # 1. Valida que no sean negativas (usa if)
+    
+    # 2. Valida que defectuosas no sea mayor que producidas (usa elif)
+    
+    # 3. Si todo está bien (else), crea el diccionario y haz append a la lista
+    
+except ValueError:
+    print("Error: Ingresa números válidos.")
+
+print("Producción actual:", produccion)</textarea>
+            </div>
+            <div class="code-output">
+                <div class="code-output-label">Salida</div>
+                <div class="code-output-content" id="output-prueba2">Haz clic en "Ejecutar" para ver el resultado...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <span class="exercise-tag tag-intermediate">PASO 3</span>
+        <h4>Opción 2: Reporte y Máquinas Críticas</h4>
+        <p style="color: var(--text-secondary); margin-bottom: 15px;">Para el reporte, se debe recorrer la lista de diccionarios. Usaremos variables acumuladoras para sumar los totales. Recuerda que la fórmula de porcentaje es <code>(parte * 100) / total</code>.</p>
+        
+        <div class="code-editor-container">
+            <div class="code-editor-header">
+                <span>📝 3_reporte.py</span>
+                <div class="editor-actions">
+                    <button class="reset-btn" onclick="resetCode('prueba3')">↺ Reiniciar</button>
+                    <button class="reset-btn" style="border-color: var(--accent-yellow); color: var(--accent-yellow);" onclick="mostrarSolucion('prueba3')">👁️ Ver Solución</button>
+                    <button class="run-btn" onclick="runCode('prueba3')">▶ Ejecutar</button>
+                </div>
+            </div>
+            <div class="code-area">
+                <div class="line-numbers" id="ln-prueba3">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17</div>
+                <textarea class="code-input" id="code-prueba3" spellcheck="false">produccion = [
+    {"codigo": "M001", "producidas": 500, "defectuosas": 50},
+    {"codigo": "M002", "producidas": 1000, "defectuosas": 10}
+]
+
+total_prod = 0
+total_def = 0
+
+# 1. Recorre la lista con un for y suma los totales
+for maq in produccion:
+    pass # Reemplaza el pass sumando maq["producidas"] y maq["defectuosas"]
+
+# 2. Calcula el porcentaje general ( total_def * 100 / total_prod ) e imprímelo
+
+# 3. Imprime las máquinas críticas (defectos > 5%)
+print("\nMáquinas Críticas:")
+for maq in produccion:
+    # Calcula el % de esta máquina y si es > 5, imprímela
+    pass</textarea>
+            </div>
+            <div class="code-output">
+                <div class="code-output-label">Salida</div>
+                <div class="code-output-content" id="output-prueba3">Haz clic en "Ejecutar" para ver el resultado...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise-card" style="border-left-color: var(--accent-green);">
+        <span class="exercise-tag tag-advanced" style="background: rgba(63, 185, 80, 0.2); color: var(--accent-green);">PASO FINAL</span>
+        <h4>¡Une todas las piezas! (Programa Completo)</h4>
+        <p style="color: var(--text-secondary); margin-bottom: 15px;">Ahora toma la estructura del menú del Paso 1, e inyecta la lógica del Paso 2 en la Opción 1, y la lógica del Paso 3 en la Opción 2. Agrega también la lógica para encontrar la **mejor máquina** del turno.</p>
+        
+        <div class="code-editor-container" style="min-height: 450px;">
+            <div class="code-editor-header">
+                <span>📝 prueba_completa.py</span>
+                <div class="editor-actions">
+                    <button class="reset-btn" onclick="resetCode('prueba4')">↺ Limpiar</button>
+                    <button class="reset-btn" style="border-color: var(--accent-green); color: var(--accent-green);" onclick="mostrarSolucion('prueba4')">👁️ Código Completo</button>
+                    <button class="run-btn" onclick="runCode('prueba4')">▶ Ejecutar Programa</button>
+                </div>
+            </div>
+            <div class="code-area" style="min-height: 350px;">
+                <div class="line-numbers" id="ln-prueba4">1<br>2<br>3<br>4<br>5</div>
+                <textarea class="code-input" id="code-prueba4" spellcheck="false" style="min-height: 350px;"># Aquí puedes armar tu código completo uniendo los pasos anteriores.
+# Recuerda el while True, los try/except y los diccionarios.
+
+produccion = []
+while True:
+    pass # ¡A programar tu prueba!</textarea>
+            </div>
+            <div class="code-output">
+                <div class="code-output-label">Terminal / Consola</div>
+                <div class="code-output-content" id="output-prueba4">Haz clic en "Ejecutar Programa" para iniciar el sistema...</div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <div class="section" id="playground">
@@ -2407,42 +2544,29 @@ const answeredQuizzes = new Set();
 
 const defaultCodes = {
     fundamentos1: `# Trucos ocultos del print clásico\nprint("Hola", "Mundo", "Cruel", sep=" - ") # sep cambia el espacio por defecto\nprint("Cargando...", end="")               # end evita el salto de línea automático\nprint("¡Listo!")\n\n# F-strings: La forma moderna\nsistema = "FastAPI"\nversion = 3.11\nrendimiento = 98.5\n\nprint(f"[{sistema} v{version}] Servidor iniciado con {rendimiento}% de rendimiento.")`,
-    
     fundamentos2: `texto = "Servidor Web"      # str (String / Cadena)\nentero = 404              # int (Integer / Entero)\ndecimal = 99.9            # float (Flotante / Decimal)\nes_activo = True          # bool (Boolean / Lógico - Siempre con Mayúscula)\n\nprint(f"El valor {entero} es de tipo: {type(entero)}")\nprint(f"El valor {decimal} es de tipo: {type(decimal)}")\n\n# Conversión de tipos (Casting)\nnumero_como_texto = "500"\nprint(f"Originalmente es: {type(numero_como_texto)}")\n\n# Lo transformamos a entero para poder operar matemáticamente\nnumero_real = int(numero_como_texto)\nprint(f"Transformado a int, ahora es: {type(numero_real)}")`,
-    
     fundamentos3: `# Matemáticas Avanzadas\nprint("División normal (10 / 3):", 10 / 3)\nprint("División entera (10 // 3):", 10 // 3) # Corta los decimales\nprint("Módulo o Resto (10 % 3):", 10 % 3)    # Súper útil para saber si un número es par o impar\nprint("Potencia (2 ** 3):", 2 ** 3)          # Dos elevado a la tres\n\n# Operadores Lógicos (and, or, not)\ntiene_acceso = True\nes_admin = False\n\nprint("\\n--- LÓGICA DE ACCESOS ---")\nprint("¿Puede entrar al panel principal? (and):", tiene_acceso and es_admin)\nprint("¿Al menos tiene alguna validación? (or):", tiene_acceso or es_admin)\nprint("Negación de admin (not):", not es_admin)`,
-
     listas: `# Crear listas\nnotas = [4.5, 6.0, 3.2, 5.8]\nnombres = ["Ana", "Luis", "Sofia"]\n\n# Acceder por indice (empieza en 0)\nprint("Primero:", nombres[0])\nprint("Ultimo:", nombres[-1])\n\n# Modificar\nnotas[0] = 5.0\nprint("Notas actualizadas:", notas)\n\n# Slicing (sublistas)\nprint("Primeros 2:", notas[:2])\nprint("Del 2 en adelante:", notas[2:])\n\n# Funciones utiles\nprint("Promedio:", sum(notas) / len(notas))`,
-
     tuplas: `# Crear tuplas\npunto = (10, 20)\ncolores = ("rojo", "verde", "azul")\n\n# Acceder (igual que listas)\nprint("Primer color:", colores[0])\nprint("Cantidad:", len(colores))\n\n# Desempaquetado: repartir en variables\nx, y = punto\nprint(f"x={x}, y={y}")\n\n# Intercambiar valores sin variable auxiliar\na, b = 1, 2\na, b = b, a\nprint(f"a={a}, b={b}")`,
-
     dicts: `# Crear un diccionario\nestudiante = {\n    "nombre": "Camila",\n    "edad": 21,\n    "carrera": "Informatica",\n    "aprobado": True\n}\n\n# Acceder y modificar\nprint("Nombre:", estudiante["nombre"])\nestudiante["edad"] = 22\nestudiante["promedio"] = 5.4\n\n# Recorrer claves y valores\nfor clave, valor in estudiante.items():\n    print(f"  {clave} -> {valor}")\n\n# get() evita errores cuando la clave no existe\nprint("Telefono:", estudiante.get("telefono", "sin dato"))`,
-
     sets: `# Crear conjuntos (duplicados desaparecen!)\nnumeros = {1, 2, 2, 3, 3, 3}\nprint("Unicos:", numeros)\n\n# Convertir lista a conjunto\nlista = [1, 1, 2, 5, 5, 5, 8]\nunicos = set(lista)\nprint("Desde lista:", unicos)\n\n# Operaciones entre conjuntos\na = {1, 2, 3, 4}\nb = {3, 4, 5, 6}\nprint("Union:", a | b)\nprint("Interseccion:", a & b)\nprint("Diferencia:", a - b)\nprint("3 esta en a?:", 3 in a)`,
-
     tryexcept: `# Simulamos input del usuario con una variable\n# (en un programa real usarias input())\n\n# CASO 1: Numero valido\nusuario_input = "25"\n\ntry:\n    edad = int(usuario_input)\n    doble = edad * 2\nexcept ValueError:\n    print("Eso no era un numero valido.")\nelse:\n    print(f"Edad: {edad}, el doble es: {doble}")\nfinally:\n    print("Proceso finalizado.\\n")\n\n# CASO 2: Texto invalido\nusuario_input = "hola"\n\ntry:\n    edad = int(usuario_input)\nexcept ValueError as e:\n    print(f"Error capturado: {e}")\n    print("Por favor ingresa un numero.")`,
-
     validacion: `# Simulamos inputs del usuario\ninputs_simulados = ["ocho", "8", "5.5"]\nindice = 0\n\ndef input_simulado():\n    global indice\n    valor = inputs_simulados[indice]\n    indice += 1\n    print(f"Usuario ingresa: \'{valor}\'")\n    return valor\n\n# Pedir una nota entre 1.0 y 7.0\nwhile True:\n    try:\n        nota = float(input_simulado())\n    except ValueError:\n        print(" -> Escribe un numero, por ejemplo 5.5")\n        continue\n    if nota < 1.0 or nota > 7.0:\n        print(" -> La nota debe estar entre 1.0 y 7.0")\n        continue\n    break  # dato valido!\n\nestado = "APROBADO" if nota >= 4.0 else "REPROBADO"\nprint(f"Nota valida: {nota} ({estado})")`,
-
     raise: `def calcular_descuento(precio, porcentaje):\n    if porcentaje < 0 or porcentaje > 100:\n        raise ValueError("El porcentaje debe estar entre 0 y 100.")\n    return precio - (precio * porcentaje / 100)\n\n# Caso valido\ntry:\n    resultado = calcular_descuento(1000, 15)\n    print(f"Precio con descuento: \${resultado}")\nexcept ValueError as e:\n    print(f"Error: {e}")\n\n# Caso invalido\ntry:\n    resultado = calcular_descuento(1000, 150)\nexcept ValueError as e:\n    print(f"Error capturado: {e}")`,
-
     import: `# Forma 1: Importar el modulo completo\nimport math\nprint("Raiz cuadrada de 25:", math.sqrt(25))\nprint("Valor de pi:", round(math.pi, 4))\n\n# Forma 2: Importar solo lo que necesitas\nfrom math import sqrt, pi, factorial\nprint("\\nCon import directo:")\nprint("sqrt(81) =", sqrt(81))\nprint("5! =", factorial(5))\n\n# Forma 3: Importar con alias (muy comun!)\nimport math as m\nprint("\\nCon alias:")\nprint("pow(2, 10) =", m.pow(2, 10))\nprint("ceil(4.1) =", m.ceil(4.1))\nprint("floor(4.9) =", m.floor(4.9))`,
-
     librandom: `import math\nimport random\n\n# math - matematicas\nradio = 5\narea = math.pi * math.pow(radio, 2)\nprint(f"Area del circulo (r={radio}): {round(area, 2)}")\n\nhipotenusa = math.sqrt(3**2 + 4**2)\nprint(f"Hipotenusa de 3-4-5: {hipotenusa}")\n\n# random - numeros al azar\nprint(f"\\nDado (1-6): {random.randint(1, 6)}")\nprint(f"Moneda: {random.choice(['cara', 'sello'])}")\nprint(f"Numero decimal 0-1: {round(random.random(), 4)}")\n\n# Mezclar una lista\ncartas = ['A', '2', '3', '4', '5']\nrandom.shuffle(cartas)\nprint(f"Cartas mezcladas: {cartas}")`,
-
     sonarbad: `# Este codigo FUNCIONA pero tiene problemas\n# que SonarQube detectaria:\n\ndef revisar(valor):\n    resultado = 10  # Variable que nunca se usa!\n    try:\n        n = int(valor)\n        return 100 / n\n    except:           # except vacio -> mala practica!\n        print("error")\n    if valor == None:  # Comparacion incorrecta con None\n        print("vacio")\n\nprint(revisar("5"))\nprint(revisar("abc"))`,
-
     sonargood: `# Version corregida, mas limpia y segura\n\ndef revisar(valor):\n    if valor is None:          # Forma correcta de comparar con None\n        print("vacio")\n        return None\n    try:\n        n = int(valor)\n        return 100 / n\n    except ValueError:         # Capturamos el error especifico\n        print("El valor no es un numero.")\n        return None\n    except ZeroDivisionError:\n        print("No se puede dividir por cero.")\n        return None\n\nprint(revisar("5"))\nprint(revisar("abc"))\nprint(revisar(None))`,
-
     segura1: `# 1. Pide el usuario (guárdalo en la variable 'usuario')\nusuario = \n\n# 2. Pide la contraseña (guárdala en 'password')\npassword = \n\n# 3. Muestra ambos datos con print()\n`,
-    
     segura2: `nombres_reservados = []\n\ndef es_nombre_reservado(usuario):\n    # Retorna True si el usuario está en la lista, si no False\n    pass\n\nprint("¿'admin' reservado?:", es_nombre_reservado('admin'))\nprint("¿'pedro' reservado?:", es_nombre_reservado('pedro'))`,
-    
     segura3: `caracteres_no_permitidos = []\n\ndef tiene_caracteres_no_permitidos(password):\n    # Recorre el password. Si encuentras uno prohibido, retorna True.\n    pass\n\nprint("Limpia:", tiene_caracteres_no_permitidos('clave123'))\nprint("Peligrosa:", tiene_caracteres_no_permitidos('clave<hacker>'))`,
-    
     segura4: `def es_nombre_reservado(u): return u in ['admin', 'root', 'system']\ndef caracteres_prohibidos(p): return any(c in ['<', '>', '&', '"'] for c in p)\n\nusuario = input("Ingresa tu usuario: ")\npassword = input("Ingresa tu contraseña: ")\n\nif es_nombre_reservado(usuario):\n    print(f"El nombre '{usuario}' está reservado. Elige otro.")\n# Completa con elif para caracteres_prohibidos:\n\n# Completa con else para el registro exitoso:\n`,
+    playground: `# Bienvenido al Playground!\n# Escribe cualquier codigo Python aqui y ejecutalo.\n# Algunas ideas para probar:\n\n# 1. Jugar con listas\nmi_lista = [1, 2, 3, 4, 5]\nprint("Mi lista:", mi_lista)\nprint("Al cuadrado:", [x**2 for x in mi_lista])\n\n# 2. Crear una funcion\ndef saludar(nombre):\n    return f"Hola, {nombre}! 🐍"\n\nprint(saludar("Programador"))\n\n# 3. Experimenta tu mismo!\nprint("\\nEscribe tu propio codigo aqui...")`,
 
-    playground: `# Bienvenido al Playground!\n# Escribe cualquier codigo Python aqui y ejecutalo.\n# Algunas ideas para probar:\n\n# 1. Jugar con listas\nmi_lista = [1, 2, 3, 4, 5]\nprint("Mi lista:", mi_lista)\nprint("Al cuadrado:", [x**2 for x in mi_lista])\n\n# 2. Crear una funcion\ndef saludar(nombre):\n    return f"Hola, {nombre}! 🐍"\n\nprint(saludar("Programador"))\n\n# 3. Experimenta tu mismo!\nprint("\\nEscribe tu propio codigo aqui...")`
+    prueba1: `# 1. Crea la lista vacía 'produccion'\n\n# 2. Crea un ciclo while True para el menú\n    # 3. Muestra las opciones (1. Registrar, 2. Ver, 3. Salir)\n    # 4. Pide la opción con input()\n    # 5. Usa if/elif para cada opción y un break en la opción 3\n`,
+    prueba2: `produccion = []\n\ntry:\n    codigo = input("Código máquina: ")\n    producidas = int(input("Piezas producidas: "))\n    defectuosas = int(input("Piezas defectuosas: "))\n    \n    # 1. Valida que no sean negativas (usa if)\n    \n    # 2. Valida que defectuosas no sea mayor que producidas (usa elif)\n    \n    # 3. Si todo está bien (else), crea el diccionario y haz append a la lista\n    \nexcept ValueError:\n    print("Error: Ingresa números válidos.")\n\nprint("Producción actual:", produccion)`,
+    prueba3: `produccion = [\n    {"codigo": "M001", "producidas": 500, "defectuosas": 50},\n    {"codigo": "M002", "producidas": 1000, "defectuosas": 10}\n]\n\ntotal_prod = 0\ntotal_def = 0\n\n# 1. Recorre la lista con un for y suma los totales\nfor maq in produccion:\n    pass # Reemplaza el pass sumando maq["producidas"] y maq["defectuosas"]\n\n# 2. Calcula el porcentaje general ( total_def * 100 / total_prod ) e imprímelo\n\n# 3. Imprime las máquinas críticas (defectos > 5%)\nprint("\\nMáquinas Críticas:")\nfor maq in produccion:\n    # Calcula el % de esta máquina y si es > 5, imprímela\n    pass`,
+    prueba4: `# Aquí puedes armar tu código completo uniendo los pasos anteriores.\n# Recuerda el while True, los try/except y los diccionarios.\n\nproduccion = []\nwhile True:\n    pass # ¡A programar tu prueba!`
 };
 
 // ==================== INIT PYODIDE ====================
@@ -2540,17 +2664,22 @@ function resetCode(id) {
     }
 }
 
-function mostrarSolucionSegura(id) {
-    const solucionesSegura = {
+function mostrarSolucion(id) {
+    const soluciones = {
         segura1: `usuario = input("Ingresa tu nombre de usuario: ")\npassword = input("Ingresa tu contraseña: ")\n\nprint("Usuario ingresado:", usuario)\nprint("Contraseña ingresada:", password)`,
         segura2: `nombres_reservados = ['admin', 'root', 'system']\n\ndef es_nombre_reservado(usuario):\n    return usuario in nombres_reservados\n\nprint("¿'admin' reservado?:", es_nombre_reservado('admin'))\nprint("¿'pedro' reservado?:", es_nombre_reservado('pedro'))`,
         segura3: `caracteres_no_permitidos = ['<', '>', '&', '"']\n\ndef tiene_caracteres_no_permitidos(password):\n    for caracter in password:\n        if caracter in caracteres_no_permitidos:\n            return True\n    return False\n\nprint("Limpia:", tiene_caracteres_no_permitidos('clave123'))\nprint("Peligrosa:", tiene_caracteres_no_permitidos('clave<hacker>'))`,
-        segura4: `def es_nombre_reservado(u): return u in ['admin', 'root', 'system']\ndef caracteres_prohibidos(p): return any(c in ['<', '>', '&', '"'] for c in p)\n\nusuario = input("Ingresa tu usuario: ")\npassword = input("Ingresa tu contraseña: ")\n\nif es_nombre_reservado(usuario):\n    print(f"El nombre '{usuario}' está reservado. Elige otro.")\nelif caracteres_prohibidos(password):\n    print("Error: La contraseña contiene caracteres no permitidos.")\nelse:\n    print(f"¡Registro exitoso! Bienvenido, {usuario}.")`
+        segura4: `def es_nombre_reservado(u): return u in ['admin', 'root', 'system']\ndef caracteres_prohibidos(p): return any(c in ['<', '>', '&', '"'] for c in p)\n\nusuario = input("Ingresa tu usuario: ")\npassword = input("Ingresa tu contraseña: ")\n\nif es_nombre_reservado(usuario):\n    print(f"El nombre '{usuario}' está reservado. Elige otro.")\nelif caracteres_prohibidos(password):\n    print("Error: La contraseña contiene caracteres no permitidos.")\nelse:\n    print(f"¡Registro exitoso! Bienvenido, {usuario}.")`,
+        
+        prueba1: `produccion = []\n\nwhile True:\n    print("\\n=== CONTROL DE PRODUCCIÓN ===")\n    print("1. Registrar producción")\n    print("2. Ver reporte")\n    print("3. Salir")\n    \n    opcion = input("Seleccione una opción: ")\n    \n    if opcion == '1':\n        print("Registrando...")\n    elif opcion == '2':\n        print("Generando reporte...")\n    elif opcion == '3':\n        print("Saliendo...")\n        break\n    else:\n        print("Opción inválida.")`,
+        prueba2: `produccion = []\n\ntry:\n    codigo = input("Código máquina: ")\n    producidas = int(input("Piezas producidas: "))\n    defectuosas = int(input("Piezas defectuosas: "))\n    \n    if producidas < 0 or defectuosas < 0:\n        print("Error: Las cantidades no pueden ser negativas.")\n    elif defectuosas > producidas:\n        print("Error: Las piezas defectuosas no pueden superar a las producidas.")\n    else:\n        diccionario = {\n            "codigo": codigo,\n            "producidas": producidas,\n            "defectuosas": defectuosas\n        }\n        produccion.append(diccionario)\n        print("¡Registro exitoso!")\n        \nexcept ValueError:\n    print("Error: Debes ingresar números enteros.")\n\nprint("Estado:", produccion)`,
+        prueba3: `produccion = [\n    {"codigo": "M001", "producidas": 500, "defectuosas": 50},\n    {"codigo": "M002", "producidas": 1000, "defectuosas": 10}\n]\n\ntotal_prod = 0\ntotal_def = 0\n\nfor maq in produccion:\n    total_prod += maq["producidas"]\n    total_def += maq["defectuosas"]\n\nporcentaje_general = (total_def * 100) / total_prod if total_prod > 0 else 0\nprint(f"Total producidas: {total_prod}")\nprint(f"Total defectuosas: {total_def}")\nprint(f"% Defectuoso general: {round(porcentaje_general, 2)}%")\n\nprint("\\nMáquinas críticas (>5%):")\nfor maq in produccion:\n    pct_local = (maq["defectuosas"] * 100) / maq["producidas"]\n    if pct_local > 5:\n        print(f"{maq['codigo']} -> {round(pct_local, 1)}%")`,
+        prueba4: `produccion = []\n\nwhile True:\n    print("\\n=== CONTROL ===")\n    print("1. Registrar\\n2. Reporte\\n3. Salir")\n    opcion = input("Opción: ")\n    \n    if opcion == '1':\n        try:\n            cod = input("Código: ")\n            prod = int(input("Producidas: "))\n            defec = int(input("Defectuosas: "))\n            if prod < 0 or defec < 0:\n                print("Sin negativos.")\n            elif defec > prod:\n                print("Defectuosas > Producidas.")\n            else:\n                produccion.append({"codigo": cod, "producidas": prod, "defectuosas": defec})\n                print("Registrado.")\n        except ValueError:\n            print("Ingresa números enteros.")\n            \n    elif opcion == '2':\n        if not produccion:\n            print("No hay datos todavía.")\n            continue\n            \n        t_prod = sum(m["producidas"] for m in produccion)\n        t_def = sum(m["defectuosas"] for m in produccion)\n        print(f"\\nTotales: Prod {t_prod} | Defec {t_def} | % Gen: {round(t_def*100/t_prod, 2)}%")\n        \n        mejor_maq = None\n        mejor_pct = 100\n        print("\\nMáquinas Críticas:")\n        for m in produccion:\n            pct = m["defectuosas"]*100/m["producidas"]\n            if pct > 5:\n                print(f"- {m['codigo']} ({round(pct,1)}%)")\n            if pct < mejor_pct:\n                mejor_pct = pct\n                mejor_maq = m['codigo']\n        print(f"\\n🏆 Mejor máquina: {mejor_maq} con {round(mejor_pct,1)}% de error")\n            \n    elif opcion == '3':\n        print("Saliendo del sistema...")\n        break\n    else:\n        print("Opción inválida.")`
     };
     
     const textarea = document.getElementById('code-' + id);
     if (textarea) {
-        textarea.value = solucionesSegura[id];
+        textarea.value = soluciones[id];
         const lines = textarea.value.split('\n').length;
         document.getElementById('ln-' + id).innerHTML = Array.from({length: lines}, (_, i) => i + 1).join('<br>');
     }
