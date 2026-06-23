@@ -2116,7 +2116,7 @@ def tiene_caracteres_no_permitidos(password):
     pass
 
 print("Limpia:", tiene_caracteres_no_permitidos('clave123'))
-print("Peligrosa:", tiene_caracteres_no_permitidos('clave<script>'))</textarea>
+print("Peligrosa:", tiene_caracteres_no_permitidos('clave<hacker>'))</textarea>
             </div>
             <div class="code-output">
                 <div class="code-output-label">Salida</div>
@@ -2280,7 +2280,7 @@ const defaultCodes = {
     
     segura2: `nombres_reservados = []\n\ndef es_nombre_reservado(usuario):\n    # Retorna True si el usuario está en la lista, si no False\n    pass\n\nprint("¿'admin' reservado?:", es_nombre_reservado('admin'))\nprint("¿'pedro' reservado?:", es_nombre_reservado('pedro'))`,
     
-    segura3: `caracteres_no_permitidos = []\n\ndef tiene_caracteres_no_permitidos(password):\n    # Recorre el password. Si encuentras uno prohibido, retorna True.\n    pass\n\nprint("Limpia:", tiene_caracteres_no_permitidos('clave123'))\nprint("Peligrosa:", tiene_caracteres_no_permitidos('clave<script>'))`,
+    segura3: `caracteres_no_permitidos = []\n\ndef tiene_caracteres_no_permitidos(password):\n    # Recorre el password. Si encuentras uno prohibido, retorna True.\n    pass\n\nprint("Limpia:", tiene_caracteres_no_permitidos('clave123'))\nprint("Peligrosa:", tiene_caracteres_no_permitidos('clave<hacker>'))`,
     
     segura4: `def es_nombre_reservado(u): return u in ['admin', 'root', 'system']\ndef caracteres_prohibidos(p): return any(c in ['<', '>', '&', '"'] for c in p)\n\nusuario = input("Ingresa tu usuario: ")\npassword = input("Ingresa tu contraseña: ")\n\nif es_nombre_reservado(usuario):\n    print(f"El nombre '{usuario}' está reservado. Elige otro.")\n# Completa con elif para caracteres_prohibidos:\n\n# Completa con else para el registro exitoso:\n`,
 
@@ -2390,7 +2390,7 @@ function mostrarSolucionSegura(id) {
     const solucionesSegura = {
         segura1: `usuario = input("Ingresa tu nombre de usuario: ")\npassword = input("Ingresa tu contraseña: ")\n\nprint("Usuario ingresado:", usuario)\nprint("Contraseña ingresada:", password)`,
         segura2: `nombres_reservados = ['admin', 'root', 'system']\n\ndef es_nombre_reservado(usuario):\n    return usuario in nombres_reservados\n\nprint("¿'admin' reservado?:", es_nombre_reservado('admin'))\nprint("¿'pedro' reservado?:", es_nombre_reservado('pedro'))`,
-        segura3: `caracteres_no_permitidos = ['<', '>', '&', '"']\n\ndef tiene_caracteres_no_permitidos(password):\n    for caracter in password:\n        if caracter in caracteres_no_permitidos:\n            return True\n    return False\n\nprint("Limpia:", tiene_caracteres_no_permitidos('clave123'))\nprint("Peligrosa:", tiene_caracteres_no_permitidos('clave<script>'))`,
+        segura3: `caracteres_no_permitidos = ['<', '>', '&', '"']\n\ndef tiene_caracteres_no_permitidos(password):\n    for caracter in password:\n        if caracter in caracteres_no_permitidos:\n            return True\n    return False\n\nprint("Limpia:", tiene_caracteres_no_permitidos('clave123'))\nprint("Peligrosa:", tiene_caracteres_no_permitidos('clave<hacker>'))`,
         segura4: `def es_nombre_reservado(u): return u in ['admin', 'root', 'system']\ndef caracteres_prohibidos(p): return any(c in ['<', '>', '&', '"'] for c in p)\n\nusuario = input("Ingresa tu usuario: ")\npassword = input("Ingresa tu contraseña: ")\n\nif es_nombre_reservado(usuario):\n    print(f"El nombre '{usuario}' está reservado. Elige otro.")\nelif caracteres_prohibidos(password):\n    print("Error: La contraseña contiene caracteres no permitidos.")\nelse:\n    print(f"¡Registro exitoso! Bienvenido, {usuario}.")`
     };
     
